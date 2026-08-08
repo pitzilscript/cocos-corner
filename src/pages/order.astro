@@ -11,9 +11,12 @@ import { farmstand } from "../data/menu"
     <div class="max-w-2xl mx-auto px-6">
 
       <div class="text-center py-16 reveal">
-        <p class="text-xs tracking-[0.3em] text-[var(--color-slate)] uppercase mb-4">Place Your Order</p>
-        <h1 class="font-serif text-5xl font-bold text-[var(--color-chocolate)] mb-4">Order for<br />{farmstand.date}</h1>
-        <div class="w-16 h-px bg-[var(--color-slate-light)] mx-auto"></div>
+        <p class="text-xs tracking-[0.3em] text-[var(--color-slate)] uppercase mb-4">Pre-Order</p>
+        <h1 class="font-serif text-5xl font-bold text-[var(--color-chocolate)] mb-4">Reserve yours<br />for {farmstand.date}</h1>
+        <div class="w-16 h-px bg-[var(--color-slate-light)] mx-auto mb-6"></div>
+        <p class="text-[var(--color-chocolate-light)] leading-relaxed text-base max-w-sm mx-auto">
+          The farmstand is first come, first serve — but she sells out within the hour. Pre-order through the form to guarantee your order.
+        </p>
       </div>
 
       <!-- Info -->
@@ -46,7 +49,7 @@ import { farmstand } from "../data/menu"
             rel="noopener noreferrer"
             class="inline-block bg-[var(--color-chocolate)] text-[var(--color-ivory)] px-12 py-5 rounded-full font-medium text-lg tracking-wide hover:bg-[var(--color-chocolate-light)] transition-colors"
           >
-            Order Now
+            Pre-Order Now
           </a>
         ) : (
           <div class="rounded-xl border border-[var(--color-slate-light)] bg-white p-10">
