@@ -4,12 +4,16 @@ import "../styles/global.css"
 interface Props {
   title?: string
   description?: string
+  image?: string
 }
 
 const {
   title = "Coco's Corner Farmstand & Bakery",
-  description = "Baked fresh. Grown with care. Found right here in the neighborhood.",
+  description = "Homemade cookies, cakes, and more, baked fresh and sold once a month at the farmstand.",
+  image = "https://cocosfarmstand.com/og-image.jpg",
 } = Astro.props
+
+const siteUrl = "https://cocosfarmstand.com"
 ---
 
 <!doctype html>
@@ -20,6 +24,20 @@ const {
     <meta name="description" content={description} />
     <title>{title}</title>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Coco's Corner Farmstand & Bakery" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={siteUrl} />
+
+    <!-- Twitter/iMessage fallback -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
   </head>
   <body>
     <slot />
