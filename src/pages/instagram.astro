@@ -26,13 +26,11 @@ import Nav from "../components/Nav.astro"
         </a>
       </div>
 
-      <!-- Placeholder grid for future embed -->
-      <div class="reveal grid grid-cols-3 gap-2 mt-8">
-        {Array.from({ length: 6 }).map(() => (
-          <div class="aspect-square rounded-xl bg-[var(--color-slate-muted)] border border-[var(--color-slate-light)]"></div>
-        ))}
+      <!-- Elfsight Instagram Feed -->
+      <div class="reveal mt-8 max-w-4xl mx-auto">
+        <script src="https://elfsightcdn.com/platform.js" async is:inline></script>
+        <div class="elfsight-app-d024f821-f366-412c-a67b-7739c20317f3" data-elfsight-app-lazy></div>
       </div>
-      <p class="text-xs text-[var(--color-slate)] mt-4 reveal">Recent posts from Instagram</p>
 
     </div>
   </div>
