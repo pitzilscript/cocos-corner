@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Nav from "../components/Nav.astro"
+import { farmstand } from "../data/menu"
+---
+
+<Layout title="Order — Coco's Corner">
+  <Nav active="order" />
+
+  <div class="min-h-screen pt-24 pb-16 bg-[var(--color-slate-muted)]">
+    <div class="max-w-2xl mx-auto px-6">
+
+      <div class="text-center py-16 reveal">
+        <p class="text-xs tracking-[0.3em] text-[var(--color-slate)] uppercase mb-4">Place Your Order</p>
+        <h1 class="font-serif text-5xl font-bold text-[var(--color-chocolate)] mb-4">Order for<br />{farmstand.date}</h1>
+        <div class="w-16 h-px bg-[var(--color-slate-light)] mx-auto"></div>
+      </div>
+
+      <!-- Info -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 reveal text-center">
+        <div>
+          <div class="text-2xl mb-3">📍</div>
+          <div class="font-serif font-bold text-[var(--color-chocolate)] mb-1">Location</div>
+          <p class="text-sm text-[var(--color-chocolate-light)]">Details shared with confirmed orders</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-3">📅</div>
+          <div class="font-serif font-bold text-[var(--color-chocolate)] mb-1">Next Date</div>
+          <p class="text-sm text-[var(--color-chocolate-light)]">{farmstand.date}</p>
+        </div>
+        <div>
+          <div class="text-2xl mb-3">💬</div>
+          <div class="font-serif font-bold text-[var(--color-chocolate)] mb-1">Questions?</div>
+          <p class="text-sm text-[var(--color-chocolate-light)]">
+            <a href="/instagram" class="underline underline-offset-2 hover:text-[var(--color-slate-dark)] transition-colors">Reach us on Instagram</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Form CTA -->
+      <div class="text-center reveal">
+        {farmstand.formOpen ? (
+          <a
+            href={farmstand.formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-[var(--color-chocolate)] text-[var(--color-ivory)] px-12 py-5 rounded-full font-medium text-lg tracking-wide hover:bg-[var(--color-chocolate-light)] transition-colors"
+          >
+            Order Now
+          </a>
+        ) : (
+          <div class="rounded-xl border border-[var(--color-slate-light)] bg-white p-10">
+            <div class="w-12 h-12 rounded-full bg-[var(--color-slate-muted)] flex items-center justify-center text-xl mx-auto mb-4">🌾</div>
+            <p class="font-serif text-xl text-[var(--color-chocolate)] mb-2">Orders opening soon</p>
+            <p class="text-sm text-[var(--color-slate)] leading-relaxed">
+              The order form opens closer to the farmstand date.<br />Follow us on Instagram to know the moment it's live.
+            </p>
+            <a
+              href="/instagram"
+              class="inline-block mt-6 bg-[var(--color-slate)] text-white px-8 py-3 rounded-full text-sm font-medium hover:bg-[var(--color-slate-dark)] transition-colors"
+            >
+              Follow on Instagram
+            </a>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="py-8 px-6 border-t border-[var(--color-slate-light)] bg-[var(--color-cream)]">
+    <div class="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--color-slate)]">
+      <span class="font-serif text-[var(--color-chocolate)]">Coco's Corner</span>
+      <span>Farmstand & Bakery · {new Date().getFullYear()}</span>
+    </div>
+  </footer>
+</Layout>

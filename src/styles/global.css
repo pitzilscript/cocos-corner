@@ -1,0 +1,97 @@
+@import "tailwindcss";
+@import "@fontsource/libre-baskerville/400.css";
+@import "@fontsource/libre-baskerville/400-italic.css";
+@import "@fontsource/libre-baskerville/700.css";
+@import "@fontsource-variable/inter";
+
+@theme {
+  --font-serif: "Libre Baskerville", Georgia, serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+
+  --color-cream: #f2ede3;
+  --color-cream-dark: #e8e0d0;
+  --color-slate: #8a9bb5;
+  --color-slate-dark: #6b7f99;
+  --color-slate-light: #d6e2ef;
+  --color-slate-muted: #edf2f7;
+  --color-chocolate: #3d2b1f;
+  --color-chocolate-light: #6b4c3b;
+  --color-sage: #a8b89a;
+  --color-ivory: #fdfaf5;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-chocolate);
+}
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered reveal delays */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* Hero fade-in on load */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-logo   { animation: fadeUp 0.8s ease both; animation-delay: 0.1s; }
+.hero-label  { animation: fadeUp 0.8s ease both; animation-delay: 0.25s; }
+.hero-title  { animation: fadeUp 0.8s ease both; animation-delay: 0.4s; }
+.hero-divider{ animation: fadeUp 0.8s ease both; animation-delay: 0.55s; }
+.hero-tagline{ animation: fadeUp 0.8s ease both; animation-delay: 0.65s; }
+.hero-cta    { animation: fadeUp 0.8s ease both; animation-delay: 0.8s; }
+
+/* Ken Burns on hero background */
+@keyframes kenBurns {
+  from { transform: scale(1.05); }
+  to   { transform: scale(1.15); }
+}
+.hero-bg {
+  animation: kenBurns 14s ease-in-out infinite alternate;
+}
+
+/* Button hover lift */
+.btn-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(61, 43, 31, 0.15);
+}
+
+/* Nav link animated underline */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-slate);
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+}

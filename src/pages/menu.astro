@@ -1,0 +1,61 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Nav from "../components/Nav.astro"
+import { farmstand } from "../data/menu"
+---
+
+<Layout title="Menu — Coco's Corner">
+  <Nav active="menu" />
+
+  <div class="min-h-screen pt-24 pb-16" style="background-color: var(--color-slate-muted);">
+    <div class="max-w-xl mx-auto px-6">
+
+      <!-- Header -->
+      <div class="text-center py-16 reveal">
+        <p class="text-xs tracking-[0.3em] text-[var(--color-slate)] uppercase mb-3">This Month's Menu</p>
+        <h1 class="font-serif text-5xl font-bold text-[var(--color-chocolate)] mb-3">{farmstand.date}</h1>
+        <div class="w-16 h-px bg-[var(--color-slate-light)] mx-auto mt-4"></div>
+      </div>
+
+      <!-- Menu items -->
+      <ul class="space-y-2 mb-16">
+        {farmstand.items.map((item, i) => (
+          <li class={`reveal reveal-delay-${i + 1} btn-lift flex items-center justify-between py-5 px-6 rounded-xl bg-white border border-[var(--color-slate-light)] hover:border-[var(--color-slate)] transition-colors`}>
+            <span class="font-serif text-lg text-[var(--color-chocolate)]">{item.name}</span>
+            <span class="text-[10px] tracking-widest text-[var(--color-slate)] uppercase ml-4 shrink-0 bg-[var(--color-slate-muted)] px-3 py-1 rounded-full">{item.category}</span>
+          </li>
+        ))}
+      </ul>
+
+      <!-- CTA -->
+      <div class="text-center reveal">
+        {farmstand.formOpen ? (
+          <a
+            href={farmstand.formUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-block bg-[var(--color-chocolate)] text-[var(--color-ivory)] px-10 py-4 rounded-full font-medium tracking-wide hover:bg-[var(--color-chocolate-light)] transition-colors"
+          >
+            Order Now
+          </a>
+        ) : (
+          <div class="rounded-xl border border-[var(--color-slate-light)] bg-white p-8">
+            <p class="text-[var(--color-slate-dark)] font-medium mb-1">Orders open soon</p>
+            <p class="text-sm text-[var(--color-slate)]">Follow us on Instagram for updates on when orders open for {farmstand.date}.</p>
+            <a href="/instagram" class="inline-block mt-4 text-sm text-[var(--color-slate-dark)] underline underline-offset-2 hover:text-[var(--color-slate)] transition-colors">
+              Follow on Instagram →
+            </a>
+          </div>
+        )}
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="py-8 px-6 border-t border-[var(--color-slate-light)] bg-[var(--color-cream)]">
+    <div class="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--color-slate)]">
+      <span class="font-serif text-[var(--color-chocolate)]">Coco's Corner</span>
+      <span>Farmstand & Bakery · {new Date().getFullYear()}</span>
+    </div>
+  </footer>
+</Layout>

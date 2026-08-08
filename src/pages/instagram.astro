@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro"
+import Nav from "../components/Nav.astro"
+---
+
+<Layout title="Instagram — Coco's Corner">
+  <Nav active="instagram" />
+
+  <div class="min-h-screen pt-24 pb-16 bg-[var(--color-cream)]">
+    <div class="max-w-2xl mx-auto px-6 text-center">
+
+      <div class="py-16 reveal">
+        <p class="text-xs tracking-[0.3em] text-[var(--color-slate)] uppercase mb-4">Follow Along</p>
+        <h1 class="font-serif text-5xl font-bold text-[var(--color-chocolate)] mb-4">@cocosfarmstand</h1>
+        <div class="w-16 h-px bg-[var(--color-slate-light)] mx-auto mb-8"></div>
+        <p class="text-[var(--color-chocolate-light)] leading-relaxed text-lg mb-8">
+          See what we've been baking, get farmstand updates, and peek behind the scenes.
+        </p>
+        <a
+          href="https://instagram.com/cocosfarmstand"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-block bg-[var(--color-slate)] text-white px-10 py-4 rounded-full font-medium tracking-wide hover:bg-[var(--color-slate-dark)] transition-colors"
+        >
+          Open Instagram
+        </a>
+      </div>
+
+      <!-- Placeholder grid for future embed -->
+      <div class="reveal grid grid-cols-3 gap-2 mt-8">
+        {Array.from({ length: 6 }).map(() => (
+          <div class="aspect-square rounded-xl bg-[var(--color-slate-muted)] border border-[var(--color-slate-light)]"></div>
+        ))}
+      </div>
+      <p class="text-xs text-[var(--color-slate)] mt-4 reveal">Recent posts from Instagram</p>
+
+    </div>
+  </div>
+
+  <footer class="py-8 px-6 border-t border-[var(--color-slate-light)] bg-[var(--color-cream)]">
+    <div class="max-w-2xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--color-slate)]">
+      <span class="font-serif text-[var(--color-chocolate)]">Coco's Corner</span>
+      <span>Farmstand & Bakery · {new Date().getFullYear()}</span>
+    </div>
+  </footer>
+</Layout>
