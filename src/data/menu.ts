@@ -1,5 +1,5 @@
 export const farmstand = {
-  date: "August 15, 2025",
+  date: "August 15, 2026",
   formOpen: true,
   formUrl: "https://docs.google.com/forms/d/1JHRKH19bued9K67EQsHvjkhbwjln25FUh9oyY8AtFSM/viewform",
   items: [
