@@ -5,9 +5,10 @@ export const farmstand = {
   items: [
     { name: "Chocolate Chunk Cookies", category: "cookies" },
     { name: "Peanut Butter Cookies", category: "cookies" },
-    { name: "Oatmeal Cream Cookies", category: "cookies" },
+    { name: "Oatmeal Cream Pie Cookies", category: "cookies" },
     { name: "Brookie (Brownie Cookie)", category: "cookies" },
+    { name: "Cookie Dipper Kits", category: "cookies" },
     { name: "Lemon Loaf", category: "cake" },
-    { name: "Dog Cookies", category: "for pups" },
+    { name: "Peanut Butter Banana Dog Treats", category: "for pups" },
   ],
 }
