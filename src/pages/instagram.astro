@@ -6,7 +6,9 @@ import Nav from "../components/Nav.astro"
 <Layout title="Instagram | Coco's Corner">
   <Nav active="instagram" />
 
-  <div class="min-h-screen pt-24 pb-16 bg-[var(--color-cream)]">
+  <div class="relative min-h-screen pt-24 pb-16">
+    <img src="/cookies-plate.jpg" alt="" class="fixed inset-0 w-full h-full object-cover object-center blur-sm scale-105" aria-hidden="true" style="z-index:-1;" />
+    <div class="fixed inset-0" style="background: rgba(242, 237, 227, 0.88); z-index:-1;"></div>
     <div class="max-w-2xl mx-auto px-6 text-center">
 
       <div class="py-16 reveal">
