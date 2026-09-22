@@ -1,6 +1,6 @@
 export const farmstand = {
-  date: "August 15, 2026",
-  formOpen: true,
+  date: "September 26, 2026",
+  formOpen: false,
   formUrl: "https://docs.google.com/forms/d/1JHRKH19bued9K67EQsHvjkhbwjln25FUh9oyY8AtFSM/viewform",
   items: [
     { name: "Chocolate Chunk Cookies", category: "cookies" },
