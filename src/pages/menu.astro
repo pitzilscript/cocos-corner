@@ -16,6 +16,7 @@ import { farmstand } from "../data/menu"
       <div class="text-center py-16 reveal">
         <p class="text-xs tracking-[0.3em] text-[var(--color-slate)] uppercase mb-3">This Month's Menu</p>
         <h1 class="font-serif text-5xl font-bold text-[var(--color-chocolate)] mb-3">{farmstand.date}</h1>
+        <p class="text-sm text-[var(--color-slate)] mt-2">{farmstand.time}</p>
         <div class="w-16 h-px bg-[var(--color-slate-light)] mx-auto mt-4"></div>
       </div>
 
@@ -23,7 +24,10 @@ import { farmstand } from "../data/menu"
       <ul class="space-y-2 mb-16">
         {farmstand.items.map((item, i) => (
           <li class={`reveal reveal-delay-${i + 1} btn-lift flex items-center justify-between py-5 px-6 rounded-xl bg-white border border-[var(--color-slate-light)] hover:border-[var(--color-slate)] transition-colors`}>
-            <span class="font-serif text-lg text-[var(--color-chocolate)]">{item.name}</span>
+            <div>
+              <span class="font-serif text-lg text-[var(--color-chocolate)]">{item.name}</span>
+              {item.price && <p class="text-xs text-[var(--color-slate)] mt-0.5">{item.price}</p>}
+            </div>
             <span class="text-[10px] tracking-widest text-[var(--color-slate)] uppercase ml-4 shrink-0 bg-[var(--color-slate-muted)] px-3 py-1 rounded-full">{item.category}</span>
           </li>
         ))}
